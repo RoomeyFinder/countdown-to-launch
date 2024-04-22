@@ -39,11 +39,33 @@ export default function Home() {
     }
   }, [formatNumber])
   const [email, setEmail] = useState("")
-  const handleFormSubmission: FormEventHandler = useCallback((e) => {
+  const [loading, setLoading] = useState(false)
+  const handleFormSubmission: FormEventHandler = useCallback(async (e) => {
     e.preventDefault()
-    toast.success("Thank you for subscribing!")
+    setLoading(true)
+    const baseUrl = "https://backend-fwhl.onrender.com/api/v1"
+    try {
+      const res = await fetch(
+        `${baseUrl}/subscriptions/launch`,
+        {
+          body: JSON.stringify({ email }),
+          method: "POST",
+          headers: {
+            'Content-Type': "application/json"
+          }
+        }
+      )
+      const resJson = await res.json()
+      if (resJson.statusCode === 200 || resJson.statusCode === 201)
+        toast.success("Thank you for subscribing!")
+      else toast.error("Please try again, something went wrong", )
+    } catch (err: any) {
+      toast.error(err?.message || "Something went wrong!")
+      console.log(err)
+    }
+    setLoading(false)
     setEmail("")
-  }, [])
+  }, [email])
 
   return (
     <>
@@ -103,9 +125,8 @@ export default function Home() {
               />
               <input
                 type="submit"
-                data-wait="Please wait..."
-                className="submit-button w-button"
-                value="Subscribe"
+                className={`${loading ? "!bg-gray-500/50 !text-black/40" : ""} submit-button w-button`}
+                value={loading ? "Please wait...":"Subscribe"}
               />
             </div>
           </form>
@@ -153,7 +174,7 @@ export default function Home() {
   )
 }
 
-function FacebookIcon(){
+function FacebookIcon() {
   return (
     <svg
       className="icon"
@@ -172,7 +193,7 @@ function FacebookIcon(){
   )
 }
 
-function TwitterIcon(){
+function TwitterIcon() {
   return (
     <svg
       className="icon"
@@ -187,7 +208,7 @@ function TwitterIcon(){
   )
 }
 
-function LinkedInIcon(){
+function LinkedInIcon() {
   return (
     <svg
       className="icon"
@@ -202,7 +223,7 @@ function LinkedInIcon(){
   )
 }
 
-function InstagramIcon(){
+function InstagramIcon() {
   return (
     <svg
       className="icon"
