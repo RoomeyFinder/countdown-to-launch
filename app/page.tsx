@@ -67,9 +67,9 @@ export default function Home() {
               <div className="text-block">{minutes}</div>
               <div className="text-block-2">m</div>
             </div>
-            <div className="w-layout-hflex w-full md:w-fit gap-[3px] md:gap-[10px] stroke-text">
-              <div className="text-block">{seconds}</div>
-              <div className="text-block-2">s</div>
+            <div className="w-layout-hflex animate-bounce w-full md:w-fit gap-[3px] md:gap-[10px] stroke-text">
+              <div className="text-block !text-[#3a86ff]/30">{seconds}</div>
+              <div className="text-block-2 !text-[#3a86ff]/30">s</div>
             </div>
           </div>
           <div className="w-layout-vflex flex-block-3 !items-center sm:!items-start">
