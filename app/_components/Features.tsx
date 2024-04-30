@@ -8,13 +8,13 @@ export default function FeaturesSection() {
   return (
     <>
       <div className="min-h-[40dvh] bg-white text-center justify-center flex w-full py-[3rem] md:py-[5rem]">
-        <section className="w-[95dvw]">
+        <main className="w-[95dvw]">
           <h1 className="mb-[2rem] text-4xl">What Roomeyfinder offers</h1>
           <p className="text-md text-gray-400 md:text-lg text-gray-600 max-w-[800px] mb-9 mx-auto leading-5">
             RoomeyFinder: From finding the perfect roommate to the perfect room,
             we make finding your ideal living situation hassle-free
           </p>
-          <div className="max-w-[600px] mx-auto">
+          <ul className="max-w-[600px] mx-auto">
             <GetSwiper
               slides={[
                 <FeatureCard
@@ -34,8 +34,8 @@ export default function FeaturesSection() {
                 />,
               ]}
             />
-          </div>
-        </section>
+          </ul>
+        </main>
       </div>
     </>
   )
