@@ -12,19 +12,19 @@ export default function GetSwiper({ slides }: { slides: ReactNode[] }) {
         effect={"cards"}
         grabCursor={true}
         loop
-        modules={[Autoplay, EffectCards, Navigation]}
+        modules={[Autoplay, EffectCards]}
         autoplay={{
-          delay: 1500,
+          delay: 5000,
           disableOnInteraction: true,
           pauseOnMouseEnter: true,
         }}
       >
         {slides.map((slide, idx) => (
           <Fragment key={idx}>
-            <SwiperSlide className="overflow-hidden rounded-[50px]">
+            <SwiperSlide key={idx} className="overflow-hidden rounded-full">
               {slide}
             </SwiperSlide>
-          </Fragment>
+         </Fragment>
         ))}
       </Swiper>
     </>

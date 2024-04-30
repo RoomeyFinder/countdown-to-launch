@@ -53,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr">
       <body className={inter.className}>
         {children} <Toaster toastOptions={{ position: "bottom-center" }} />
       </body>

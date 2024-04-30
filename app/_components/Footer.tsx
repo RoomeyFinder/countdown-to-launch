@@ -7,7 +7,7 @@ import TwitterIcon from "../_assets/TwitterIcon";
 
 export default function Footer(){
   return (
-    <footer className="flex flex-col flex-block-5">
+    <footer className="flex flex-col flex-block-5 mt-[80px]">
       <div className="flex gap-3">
         <a target="_blank" href="https://facebook.com/61558566416460">
           <FacebookIcon />

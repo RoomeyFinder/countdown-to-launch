@@ -32,14 +32,14 @@ export default function SubscribeForm() {
   )
 
   return (
-    <div className="mx-auto w-[90%] max-w-[450px] flex justify-center items-center my-[40px]">
+    <div className="mx-auto w-[90%] max-w-[450px] flex justify-center items-center">
       <form
         className="w-full"
         name="email-form"
         onSubmit={handleFormSubmission}
         aria-label="Email Form"
       >
-        <label htmlFor="name" className="text-base text-gray-800 text-start leading-9 mb">
+        <label htmlFor="name" className="text-[20px] text-gray-800 text-start leading-9 mb">
           Get notified when we launch
         </label>
         <div className="flex overflow-hidden rounded-[100px] w-full">

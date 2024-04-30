@@ -550,3 +550,8 @@ textarea.w-input, textarea.w-select {
   }
 }
 
+.text-stroke {
+  text-shadow: -1px -1px 0 #3a85ff33, 1px -1px 0 #3a85ff2b, -1px 1px 0 #3a85ff7f,
+    1px 1px 0 #3a85ffce;
+  color: white;
+}
