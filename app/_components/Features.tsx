@@ -7,7 +7,7 @@ import GetSwiper from "./Swiper"
 export default function FeaturesSection() {
   return (
     <>
-      <div className="min-h-[40dvh] bg-[#A1A1A1]/5 bg-white text-center justify-center flex w-full py-[3rem] md:py-[5rem]">
+      <div className="min-h-[40dvh] bg-[#A1A1A111] bg-white text-center justify-center flex w-full py-[3rem] md:py-[5rem]">
         <main className="w-[95dvw]">
           <h1 className="mb-[2rem] text-2xl md:text-4xl">What Roomeyfinder offers</h1>
           <p className="text-md text-gray-400 md:text-lg text-gray-600 max-w-[800px] mb-9 mx-auto leading-5">
