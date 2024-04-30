@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   title: "RoomeyFinder | Coming Soon",
   description: "We make finding your perfect living situation one less hassle.",
   keywords: "roommate, living situation, housing, accommodation",
-  viewport: "width=device-width, initial-scale=1.0",
   robots: "index, follow",
   openGraph: {
     title: "RoomeyFinder | Coming Soon",
