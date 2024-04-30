@@ -18,16 +18,19 @@ export default function FeaturesSection() {
             <GetSwiper
               slides={[
                 <FeatureCard
+                  key={"A"}
                   iconChild={<PeopleGroup />}
                   heading="List your space"
                   body="Roomeyfinder will help you effortlessly project and list your available living spaces. Our platform will serve as a dedicated avenue to showcase your space and connect with individuals searching for their ideal space."
                 />,
                 <FeatureCard
+                  key="B"
                   iconChild={<Handlens />}
                   heading="Find a new space"
                   body="Discover your ideal living space effortlessly with Roomeyfinder. Explore a curated selection of spaces tailored to your preferences and make informed decisions, all in one place."
                 />,
                 <FeatureCard
+                  key="C"
                   iconChild={<ChatIcon />}
                   heading="Message potential roommates"
                   body="Unlock seamless communication with potential roommates through Roomeyfinder's intuitive messaging system. Foster connections, share details, and find your ideal living companion effortlessly."
