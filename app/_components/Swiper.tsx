@@ -3,7 +3,7 @@ import "swiper/css"
 import "swiper/css/effect-cards"
 import "swiper/css/navigation"
 import { EffectCards, Autoplay, Navigation } from "swiper/modules"
-import { ReactNode } from "react"
+import { Fragment, ReactNode } from "react"
 
 export default function GetSwiper({ slides }: { slides: ReactNode[] }) {
   return (
@@ -20,9 +20,11 @@ export default function GetSwiper({ slides }: { slides: ReactNode[] }) {
         }}
       >
         {slides.map((slide, idx) => (
-          <SwiperSlide key={idx} className="overflow-hidden rounded-[50px]">
-            {slide}
-          </SwiperSlide>
+          <Fragment key={idx}>
+            <SwiperSlide className="overflow-hidden rounded-[50px]">
+              {slide}
+            </SwiperSlide>
+          </Fragment>
         ))}
       </Swiper>
     </>
