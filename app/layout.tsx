@@ -40,7 +40,12 @@ export const metadata: Metadata = {
     creator: "exploitenomah",
     creatorId: "945750336823873537",
   },
-  icons: [],
+  icons: [
+    {
+      url: "/rf-logo.png",
+      sizes: "64x64",
+    },
+  ],
 }
 
 export default function RootLayout({
