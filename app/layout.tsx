@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "RoomeyFinder | Coming Soon",
   description: "We make finding your perfect living situation one less hassle.",
-  keywords: "roommate, living situation, housing, accommodation",
+  keywords: "roommate, living situation, housing, accommodation, room, finder, room finder, roomie, roomey, room",
   robots: "index, follow",
   openGraph: {
     title: "RoomeyFinder | Coming Soon",
