@@ -4,7 +4,7 @@ import "./globals.css"
 import { Toaster } from "react-hot-toast"
 
 const inter = Inter({ subsets: ["latin"] })
-
+// todo
 export const metadata: Metadata = {
   title: "RoomeyFinder | Coming Soon",
   description: "We make finding your perfect living situation one less hassle.",
