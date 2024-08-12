@@ -8,7 +8,7 @@ export default function CountDown() {
         <span className="">Coming Soon.</span>
       </h1>
       <p className="text-center animate-pulse text-5xl md:text-8xl font-[800] text-stroke stroke-green-400">
-        1st August, 2024
+        1st September, 2024
       </p>
     </div>
   )

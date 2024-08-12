@@ -8,7 +8,7 @@ export default function SubscribeForm() {
     async (e) => {
       e.preventDefault()
       setLoading(true)
-      const baseUrl = "https://bookshelf-d7fccvxjga-uc.a.run.app/api/v1"
+      const baseUrl = "https://api.roomeyfinder.com/api/v1"
       try {
         const res = await fetch(`${baseUrl}/subscriptions/launch`, {
           body: JSON.stringify({ email }),
