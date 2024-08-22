@@ -3,6 +3,7 @@ import toast from "react-hot-toast"
 
 export default function SubscribeForm() {
   const [email, setEmail] = useState("")
+  const [inviteCode, setInviteCode] = useState("")
   const [loading, setLoading] = useState(false)
   const handleFormSubmission: FormEventHandler = useCallback(
     async (e) => {
@@ -11,7 +12,7 @@ export default function SubscribeForm() {
       const baseUrl = "https://api.roomeyfinder.com/api/v1"
       try {
         const res = await fetch(`${baseUrl}/subscriptions/launch`, {
-          body: JSON.stringify({ email }),
+          body: JSON.stringify({ email, inviteCode }),
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -28,23 +29,26 @@ export default function SubscribeForm() {
       setLoading(false)
       setEmail("")
     },
-    [email]
+    [email, inviteCode]
   )
 
   return (
-    <div className="mx-auto w-[90%] max-w-[450px] flex justify-center items-center">
+    <div id="subscribe" className="flex justify-center items-center border-b min-h-[50dvh]">
       <form
-        className="w-full"
         name="email-form"
         onSubmit={handleFormSubmission}
         aria-label="Email Form"
+        className="mx-auto w-[90%] max-w-[450px] "
       >
-        <label htmlFor="name" className="text-[20px] text-gray-800 text-start leading-9 mb">
+        <label
+          htmlFor="name"
+          className="text-[24px] font-[400] text-gray-800 text-start leading-9 mb-4"
+        >
           Get notified when we launch
         </label>
-        <div className="flex overflow-hidden rounded-[100px] w-full">
+        <div className="flex flex-col gap-2">
           <input
-            className="bg-white w-2/3 grow focus:outline-0 focus:border-l-[#3a86ff] focus:border-y-[#3a86ff] border border-gray-300 w-full px-4 py-4 text-base leading-4 rounded-l-full"
+            className="bg-white w-2/3 grow focus:outline-0 focus:border-l-[#3a86ff] focus:border-y-[#3a86ff] border border-gray-300 w-full px-4 py-3 text-base leading-4 rounded-lg disabled:opacity-[0.4] disabled:cursor-not-allowed"
             maxLength={256}
             name="Email"
             data-name="Email"
@@ -52,14 +56,24 @@ export default function SubscribeForm() {
             type="email"
             id="Email"
             required
+            disabled={loading}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            placeholder="Invite code (optional)"
+            className="bg-white w-2/3 grow focus:outline-0 focus:border-l-[#3a86ff] focus:border-y-[#3a86ff] border border-gray-300 w-full px-4 py-3 text-base leading-4 rounded-lg uppercase placeholder:capitalize disabled:opacity-[0.4] disabled:cursor-not-allowed"
+            type=""
+            maxLength={8}
+            value={inviteCode}
+            disabled={loading}
+            onChange={(e) => setInviteCode(e.target.value)}
           />
           <input
             type="submit"
             className={`${
               loading ? "!bg-gray-500/50 !text-black/40" : ""
-            } bg-[#3a86ff] w-1/2 max-w-[150px] grow text-base leading-7 w-1/3 text-white text-[14px] px-2 cursor-pointer border-0 rounded-none hover:brightness-[105%]`}
+            } bg-[#3a86ff] w-1/2 max-w-[150px] py-2 mt-3 mr-auto grow text-base leading-7 w-1/3 text-white text-[14px] px-2 cursor-pointer border-0 hover:brightness-[105%] rounded-lg`}
             value={loading ? "Please wait..." : "Subscribe"}
           />
         </div>
