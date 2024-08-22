@@ -9,7 +9,7 @@ export default function SubscribeForm() {
     async (e) => {
       e.preventDefault()
       setLoading(true)
-      const baseUrl = "https://api.roomeyfinder.com/api/v1"
+      const baseUrl = "https://www.api.roomeyfinder.com/api/v1"
       try {
         const res = await fetch(`${baseUrl}/subscriptions/launch`, {
           body: JSON.stringify({ email, inviteCode }),
