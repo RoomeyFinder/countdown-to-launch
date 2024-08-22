@@ -7,7 +7,7 @@ import GetSwiper from "./Swiper"
 export default function FeaturesSection() {
   return (
     <>
-      <div className="min-h-[40dvh] bg-[#A1A1A111] bg-white text-center justify-center flex w-full py-[3rem] md:py-[5rem]">
+      <div className="min-h-[40dvh] bg-[#A1A1A111] bg-white text-center justify-center flex w-full pt-[5rem]">
         <main className="w-[95dvw]">
           <h1 className="mb-[2rem] text-2xl md:text-4xl text-[#181c2d]">
             What Roomeyfinder offers
@@ -16,7 +16,7 @@ export default function FeaturesSection() {
             RoomeyFinder: From finding the perfect roommate to the perfect room,
             we make finding your ideal living situation hassle-free
           </p>
-          <ul className="mx-auto grid grid-cols-3 gap-4 items-stretch">
+          <ul className="mx-auto px-2 grid md:grid-cols-3 gap-4 items-stretch">
             <FeatureCard
               iconChild={<PeopleGroup />}
               heading="List your space"
