@@ -1,9 +1,19 @@
-import { useState, FormEventHandler, useCallback } from "react"
+"use client"
+import { useSearchParams } from "next/navigation"
+import {
+  useState,
+  FormEventHandler,
+  useCallback,
+  useEffect,
+  useRef,
+} from "react"
 import toast from "react-hot-toast"
 
 export default function SubscribeForm() {
+  const formRef = useRef<HTMLDivElement | null>(null)
+  const searchParams = useSearchParams()
   const [email, setEmail] = useState("")
-  const [inviteCode, setInviteCode] = useState("")
+  const [inviteCode, setInviteCode] = useState(searchParams.get("code") || "")
   const [loading, setLoading] = useState(false)
   const handleFormSubmission: FormEventHandler = useCallback(
     async (e) => {
@@ -31,9 +41,16 @@ export default function SubscribeForm() {
     },
     [email, inviteCode]
   )
+  useEffect(() => {
+    if (searchParams.get("code")) formRef.current?.scrollIntoView()
+  }, [searchParams])
 
   return (
-    <div id="subscribe" className="flex justify-center items-center border-b min-h-[50dvh]">
+    <div
+      ref={formRef}
+      id="subscribe"
+      className="flex justify-center items-center border-b min-h-[50dvh]"
+    >
       <form
         name="email-form"
         onSubmit={handleFormSubmission}
@@ -64,7 +81,7 @@ export default function SubscribeForm() {
             placeholder="Invite code (optional)"
             className="bg-white w-2/3 grow focus:outline-0 focus:border-l-[#3a86ff] focus:border-y-[#3a86ff] border border-gray-300 w-full px-4 py-3 text-base leading-4 rounded-lg uppercase placeholder:capitalize disabled:opacity-[0.4] disabled:cursor-not-allowed"
             type=""
-            maxLength={8}
+            maxLength={11}
             value={inviteCode}
             disabled={loading}
             onChange={(e) => setInviteCode(e.target.value)}
