@@ -58,35 +58,39 @@ export default function SubscribeForm() {
         aria-label="Email Form"
         className="mx-auto w-[90%] max-w-[450px] "
       >
-        <label
-          htmlFor="name"
-          className="text-[24px] font-[400] text-gray-800 text-start leading-9 mb-4"
-        >
+        <p className="text-[24px] font-[400] text-gray-800 text-start leading-9 mb-4">
           Get notified when we launch
-        </label>
+        </p>
         <div className="flex flex-col gap-2">
-          <input
-            className="bg-white w-2/3 grow focus:outline-0 focus:border-l-[#3a86ff] focus:border-y-[#3a86ff] border border-gray-300 w-full px-4 py-3 text-base leading-4 rounded-lg disabled:opacity-[0.4] disabled:cursor-not-allowed"
-            maxLength={256}
-            name="Email"
-            data-name="Email"
-            placeholder="Email"
-            type="email"
-            id="Email"
-            required
-            disabled={loading}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            placeholder="Invite code (optional)"
-            className="bg-white w-2/3 grow focus:outline-0 focus:border-l-[#3a86ff] focus:border-y-[#3a86ff] border border-gray-300 w-full px-4 py-3 text-base leading-4 rounded-lg uppercase placeholder:capitalize disabled:opacity-[0.4] disabled:cursor-not-allowed"
-            type=""
-            maxLength={11}
-            value={inviteCode}
-            disabled={loading}
-            onChange={(e) => setInviteCode(e.target.value)}
-          />
+          <div>
+            <label className="font-[500]" htmlFor="email">Email</label>
+            <input
+              className="bg-white w-2/3 grow focus:outline-0 focus:border-l-[#3a86ff] focus:border-y-[#3a86ff] border border-gray-300 w-full px-4 py-3 text-base leading-4 rounded-lg disabled:opacity-[0.4] disabled:cursor-not-allowed"
+              maxLength={256}
+              name="Email"
+              data-name="Email"
+              placeholder="Email"
+              type="email"
+              id="Email"
+              required
+              disabled={loading}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div>
+            <label className="font-[500]" htmlFor="invite-code">Invite code</label>
+            <input
+              placeholder="Invite code (optional)"
+              className="bg-white w-2/3 grow focus:outline-0 focus:border-l-[#3a86ff] focus:border-y-[#3a86ff] border border-gray-300 w-full px-4 py-3 text-base leading-4 rounded-lg uppercase placeholder:capitalize disabled:opacity-[0.4] disabled:cursor-not-allowed"
+              type=""
+              id="invite-code"
+              maxLength={11}
+              value={inviteCode}
+              disabled={loading}
+              onChange={(e) => setInviteCode(e.target.value)}
+            />
+          </div>
           <input
             type="submit"
             className={`${
